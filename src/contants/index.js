@@ -25,7 +25,7 @@ export const sectionProjects = [
     },
     {
         id: 2, 
-        title: 'Responsive tasks management', 
+        title: 'React Task Organizer with Real-Time Storage', 
         img: {
             desktop: tododesktop,
             mobile: todomobile

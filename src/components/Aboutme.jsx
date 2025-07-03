@@ -10,6 +10,7 @@ import Navbar from './Navbar'
 import Breadcrumb from './Breadcrumb';
 import BlurBackgroundDiv from '../reusable-components/BlurBackgroundDiv';
 import DotGrid from '../reactbits/DotGrid';
+import LoadingIcon from './LoadingIcon';
 // import GreetRobot from '../spline/GreetRobot';
 // import Spline from '@splinetool/react-spline';
 
@@ -60,7 +61,7 @@ function Aboutme() {
                     <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 lg:mb-20 mb-10 aboutboxes">
                         <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%] row-span-2 flex justify-center items-center">
                             <div className='relative w-full lg:h-100 h-75'>
-                                <Suspense fallback={<></>}>
+                                <Suspense fallback={<LoadingIcon />}>
                                     <GreetRobot />
                                 </Suspense>
                                 <div className='absolute bottom-0 right-0 w-full h-15 bg-stone-950'></div>

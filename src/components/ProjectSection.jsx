@@ -40,7 +40,6 @@ function ProjectSection() {
         })
 
         const boxes = gsap.utils.toArray(boxRef.current.children);
-        // console.log(boxes);
 
         const boxTimeline = gsap.timeline({
             scrollTrigger: {
@@ -88,21 +87,22 @@ function ProjectSection() {
                         </div>
 
                         <div className='relative flex flex-col items-center text-center gap-5'>
-                            <h3 className='font-allenoire lg:text-5xl md:text-4xl text-3xl'>
+                            <h3 className='lg:text-5xl md:text-4xl text-3xl'>
                                 {project.title}
                             </h3>
                         </div>
                         
                         <div className='absolute top-10 right-10 flex md:flex-row items-center gap-5'>
+                            <a href={project.gitHubLink} target='_blank' className='w-30 flex justify-center items-center gap-1 hover:gap-2 text-2xl rounded-full text-stone-950 bg-white transition-all hover:scale-110 cursor-pointer py-2'>
+                                <span className='text-base'>Go Live</span>
+                                <ion-icon name="eye"></ion-icon>
+                            </a>
                             <Link to={`/projects/${project.id}`}>
-                                <button className='w-25 flex justify-center items-center gap-0 hover:gap-2 text-2xl rounded-full text-stone-950 bg-white transition-all hover:scale-110 cursor-pointer py-2'>
+                                <button className='w-25 flex justify-center items-center gap-1 hover:gap-2 text-2xl rounded-full text-stone-950 bg-white transition-all hover:scale-110 cursor-pointer py-2'>
+                                    <ion-icon name="reader-outline"></ion-icon>
                                     <span className='text-base'>Detail</span>
-                                    <ion-icon name="arrow-forward-circle"></ion-icon>
                                 </button>
                             </Link>
-                            <a href={project.gitHubLink} target='_blank' className='size-10 flex justify-center items-center text-2xl rounded-[50%] bg-stone-950 transition hover:scale-110 cursor-pointer'>
-                                <ion-icon name="logo-github"></ion-icon>
-                            </a>
                         </div>
                     </div>
                 ))}
