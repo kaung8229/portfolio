@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@font-face {
+    font-family: allenoire;
+    src: url("./font/allenoire.ttf") format("truetype");
+}
+
+@theme{
+    --font-allenoire: "allenoire";
+    --font-roboto: "Roboto", sans-serif;
+    --shadow-top: 0 10px 20px 20px rgba(0,0,0,0.2);
+}
+
+@utility responsive-container{
+    @apply container 2xl:px-60 px-5 mx-auto;
+}
+
+@utility overlay-gradient{
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 1) 100%);
+}
+
+@layer base{
+    nav{
+        @apply absolute top-0 left-0 z-50 w-full xl:pl-30 lg:pl-20 pl-5;
+    }
+
+    section{
+        @apply relative w-full min-h-screen font-roboto text-white bg-stone-950;
+    }
+}
