@@ -4,10 +4,6 @@ import tododesktop from '../assets/tododesktop.jpg';
 import todomobile from '../assets/todomobile.jpg';
 
 export const marquessTexts = [
-    "HTML",
-    "CSS",
-    "JavaScript (ES6+)",
-    "React",
     "Responsive Web Design",
     "Component-Based Architecture",
     "API Integration",

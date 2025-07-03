@@ -125,7 +125,7 @@ function Aboutme() {
                             <BlurBackgroundDiv className={'shrink-0 max-sm:w-[100%] text-center md:text-right'}>
                                 <h3 className='text-lg font-bold'>Advanced Diploma in Computing</h3>
                                 <p className='my-2'>Amity Global Institute</p>
-                                <p>January 2024 | Augest 2025</p>
+                                <p>January 2025 | Augest 2025</p>
                             </BlurBackgroundDiv>
 
                             <div className='relative z-10 w-1 md:w-full h-5 md:h-1 bg-gray-500 before:content-[""] before:absolute before:-right-1 md:before:right-0 before:top-[100%] md:before:-top-1 before:size-3 before:rounded-[50%] before:bg-gray-500'></div>
@@ -135,10 +135,10 @@ function Aboutme() {
 
                         <div className='md:self-end w-full md:w-[50%] flex flex-col md:flex-row items-center'>
                             <div className='relative z-10 w-1 md:w-full h-5 md:h-1 bg-gray-500 before:content-[""] before:absolute before:-left-1 md:before:left-0 before:-top-3 md:before:-top-1 before:size-3 before:rounded-[50%] before:bg-gray-500'></div>
-                            <BlurBackgroundDiv className={'shrink-0 max-sm:w-[100%] text-center md:text-right'}>
-                                <h3 className='text-lg font-bold'>Advanced Diploma in Computing</h3>
+                            <BlurBackgroundDiv className={'shrink-0 max-sm:w-[100%] text-center md:text-left'}>
+                                <h3 className='text-lg font-bold'>Diploma in Computing</h3>
                                 <p className='my-2'>Amity Global Institute</p>
-                                <p>January 2024 | Augest 2025</p>
+                                <p>April 2024 | November 2024</p>
                             </BlurBackgroundDiv>
                         </div>
                     </div>
