@@ -19,7 +19,10 @@ function Home() {
             const subtitle2Split = SplitText.create('.subtitle2', {type: 'words,chars'});
             
             gsap.timeline({
-                duration: 2
+                ease: 'power1.out'
+            })
+            .to('#fadeIn',{
+                opacity: 1
             })
             .from(subtitle1Split.chars, {
                 opacity: 0,
@@ -96,7 +99,7 @@ function Home() {
 
     return (
         <section className='overflow-hidden'>
-            <div className='relative h-screen flex lg:flex-row flex-col items-center'>
+            <div id='fadeIn' className='relative h-screen flex lg:flex-row flex-col items-center opacity-0'>
                 <Navbar />
 
                 <DotGrid
