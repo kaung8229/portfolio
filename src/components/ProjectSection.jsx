@@ -93,7 +93,7 @@ function ProjectSection() {
                         </div>
                         
                         <div className='absolute top-10 right-10 flex md:flex-row items-center gap-5'>
-                            <a href={project.gitHubLink} target='_blank' className='w-30 flex justify-center items-center gap-1 hover:gap-2 text-2xl rounded-full text-stone-950 bg-white transition-all hover:scale-110 cursor-pointer py-2'>
+                            <a href={project.demoLink} target='_blank' className='w-30 flex justify-center items-center gap-1 hover:gap-2 text-2xl rounded-full text-stone-950 bg-white transition-all hover:scale-110 cursor-pointer py-2'>
                                 <span className='text-base'>Go Live</span>
                                 <ion-icon name="eye"></ion-icon>
                             </a>
