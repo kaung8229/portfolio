@@ -8,6 +8,7 @@ import { sectionProjects } from '../contants';
 import DotGrid from '../reactbits/DotGrid'
 import Navbar from './Navbar';
 import Breadcrumb from './Breadcrumb';
+import BlurBackgroundDiv from '../reusable-components/BlurBackgroundDiv';
 
 function ProjectSection() {
     const bannerRef = useRef(null);
@@ -109,6 +110,12 @@ function ProjectSection() {
             </div>
 
             <div className='responsive-container relative my-15'>
+                <BlurBackgroundDiv className={'mb-15'}>
+                    <p className='font-allenoire lg:text-2xl text-lg text-center'>
+                        I’m always working on new things. Check back later for updates!
+                    </p>
+                </BlurBackgroundDiv>
+
                 <Breadcrumb
                     title1='Home'
                     route1='/'

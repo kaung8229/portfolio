@@ -2,6 +2,8 @@ import moviedesktop from '../assets/moviedesktop.jpg';
 import moviemobile from '../assets/moviemobile.jpg';
 import tododesktop from '../assets/tododesktop.jpg';
 import todomobile from '../assets/todomobile.jpg';
+import cockdesktop from '../assets/cockdesktop.jpg';
+import cockmobile from '../assets/cockmobile.jpg';
 
 export const marquessTexts = [
     "Responsive Web Design",
@@ -32,6 +34,16 @@ export const sectionProjects = [
         }, 
         demoLink: 'https://multitaskmanager.netlify.app/', 
         gitHubLink: 'https://github.com/kaung8229/TodoList',
+    },
+    {
+        id: 3, 
+        title: 'Cocktail Landing Page', 
+        img: {
+            desktop: cockdesktop,
+            mobile: cockmobile
+        }, 
+        demoLink: 'https://cocktailsland.netlify.app/', 
+        gitHubLink: 'https://github.com/kaung8229/cocktail-gsap',
     }
 ];
 
@@ -82,6 +94,29 @@ export const detailProjects = [
             'Uses Firebase Firestore to store and sync tasks in real-time across devices.',
             'Designed with Tailwind CSS to look great on mobile, tablet, and desktop screens.',
             'Built using a component-based architecture for maintainable and scalable code.'
+        ]
+    },
+    {
+        id: 3, 
+        title: 'Cocktail Landing Page', 
+        img: {
+            desktop: cockdesktop,
+            mobile: cockmobile
+        }, 
+        demoLink: 'https://cocktailsland.netlify.app/', 
+        gitHubLink: 'https://github.com/kaung8229/cocktail-gsap',
+        overview: 'This is a modern, responsive landing page built with React and animated using GSAP and ScrollTrigger. The project was created while learning GSAP animation techniques through a YouTube tutorial. It helped me understand how to build smooth, scroll-based animations and control timeline sequences in a React environment. I followed the original layout for learning purposes, and customized parts of the design to explore animation behavior, layout responsiveness, and visual flow.',
+        tech: [
+            'React',
+            'Tailwind CSS',
+            'GSAP'
+        ],
+        features: [
+            'Used GSAP and ScrollTrigger to animate text, images, and sections smoothly as the user scrolls through the page.',
+            'Built the landing page using modular React components for clean and maintainable code.',
+            'Ensured the layout works well across mobile, tablet, and desktop using Tailwind CSS.',
+            'Followed a visually appealing layout to practice design principles like hierarchy, spacing, and alignment.',
+            'Rebuilt and modified from a YouTube GSAP tutorial to practice animation logic and styling customization in a React environment.'
         ]
     }
 ];
