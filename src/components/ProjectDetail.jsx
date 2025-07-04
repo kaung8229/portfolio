@@ -132,7 +132,7 @@ function ProjectDetail() {
                         <div className='flex items-center gap-5 links'>
                             <a href={findProject.demoLink} target='_blank' className='flex justify-center items-center gap-2 hover:gap-3 sm:text-2xl text-xl rounded-full text-stone-950 bg-white transition-all hover:scale-105 cursor-pointer px-3 py-2'>
                                 <span className='sm:text-base text-sm'>Go Live</span>
-                                <ion-icon name="arrow-forward-circle"></ion-icon>
+                                <ion-icon name="eye"></ion-icon>
                             </a>
                             <a href={findProject.gitHubLink} target='_blank' className='size-10 flex justify-center items-center text-2xl rounded-[50%] text-stone-950 bg-white transition hover:scale-110 cursor-pointer'>
                                 <ion-icon name="logo-github"></ion-icon>

@@ -1,9 +1,9 @@
 import React from 'react'
-import './loadingIcon.module.css'
+import styles from './loadingIcon.module.css'
 
 function LoadingIcon() {
     return (
-        <div>Loading</div>
+        <div className={styles.loader}></div>
     )
 }
 

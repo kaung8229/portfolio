@@ -6,7 +6,10 @@ import { SplitText } from "gsap/all";
 
 import Navbar from './Navbar'
 import Marquee from './Marquee'
-import DotGrid from '../reactbits/DotGrid';
+import LoadingIcon from './LoadingIcon';
+// import DotGrid from '../reactbits/DotGrid';
+
+const DotGrid = lazy(()=> import("../reactbits/DotGrid"))
 
 function Home() {
     const projectRef = useRef(null);
@@ -55,9 +58,6 @@ function Home() {
             const cx = e.clientX - e.target.closest('div').offsetLeft;
             const cy = e.clientY - e.target.closest('div').offsetTop;
 
-            const px = Math.round((cx / ew) * 100);
-            const py = Math.round((cy / eh) * 100);
-
             gsap.to(ele, {
                 x: cx,
                 y: cy,
@@ -102,17 +102,19 @@ function Home() {
             <div id='fadeIn' className='relative h-screen flex lg:flex-row flex-col items-center opacity-0'>
                 <Navbar />
 
-                <DotGrid
-                    dotSize={10}
-                    gap={15}
-                    baseColor="#222222"
-                    activeColor="#000000"
-                    proximity={120}
-                    shockRadius={250}
-                    shockStrength={5}
-                    resistance={750}
-                    returnDuration={1.5}
-                />
+                <Suspense fallback={<></>}>
+                    <DotGrid
+                        dotSize={10}
+                        gap={15}
+                        baseColor="#222222"
+                        activeColor="#000000"
+                        proximity={120}
+                        shockRadius={250}
+                        shockStrength={5}
+                        resistance={750}
+                        returnDuration={1.5}
+                    />
+                </Suspense>
 
                 <div className='relative lg:w-[50%] w-full lg:h-full h-[50%] flex flex-col justify-center gap-5 max-lg:text-center xl:pl-30 lg:pl-20 max-lg:pt-20 max-lg:px-5'>
                     <p className='md:text-2xl text-xl font-bold text-gray-500 subtitle1'>
@@ -128,12 +130,12 @@ function Home() {
 
                 <div className='lg:w-[50%] w-full lg:h-full h-[50%] pb-10'>
                     <Link to={'/projects'}>
-                        <div ref={projectRef} className='relative h-[50%] grid place-items-center text-stone-950 bg-white overflow-hidden max-sm:px-5 transition-opacity duration-500 '>
+                        <div ref={projectRef} className='relative z-60 h-[50%] grid place-items-center text-stone-950 bg-white overflow-hidden max-sm:px-5 transition-opacity duration-500 '>
                             <button className='relative z-40 font-allenoire md:text-5xl text-4xl cursor-pointer hover:underline'>Projects Showcase</button>
                             <div className='max-lg:hidden absolute top-0 left-0 pj-boxs pointer-events-none'>
-                                <div className='absolute top-0 left-0 z-30 -translate-1/2 rotate-5 size-25 bg-red-500'></div>
-                                <div className='absolute top-0 left-0 z-20 -translate-1/2 -rotate-5 size-35 bg-blue-500'></div>
-                                <div className='absolute top-0 left-0 z-10 -translate-1/2 rotate-15 size-45 bg-green-500'></div>
+                                <div className='absolute top-0 left-0 z-30 -translate-1/2 rotate-5 size-25 border-4 rounded-[50%]'></div>
+                                <div className='absolute top-0 left-0 z-20 -translate-1/2 -rotate-5 size-35 border-4 rounded-[50%]'></div>
+                                <div className='absolute top-0 left-0 z-10 -translate-1/2 rotate-15 size-45 border-4 rounded-[50%]'></div>
                             </div>
                         </div>
                     </Link>

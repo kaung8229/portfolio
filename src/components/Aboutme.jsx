@@ -74,16 +74,16 @@ function Aboutme() {
                         </BlurBackgroundDiv>
                         <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%] flex sm:flex-row flex-col gap-3 items-center">
                             <div className='flex sm:border-r pr-3'>
-                                <a href='' className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
+                                <a href='https://github.com/kaung8229' target="_blank" className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
                                     <ion-icon name="logo-github"></ion-icon>
                                 </a>
-                                <a href='' className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
+                                <a href='https://www.linkedin.com/in/kaung-myat-7a8a21271/' target="_blank" className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
                                     <ion-icon name="logo-linkedin"></ion-icon>
                                 </a>
                             </div>
                             <div>
                                 <p className='lg:text-lg text-base lg:leading-loose leading-relaxed'>
-                                    kaung8229@gmail.com
+                                    <a href="mailto:kaung8229@gmail.com">kaung8229@gmail.com</a>
                                 </p>
                             </div>
                         </BlurBackgroundDiv>
@@ -125,7 +125,11 @@ function Aboutme() {
                         <div className='md:self-start w-full md:w-[50%] flex flex-col md:flex-row items-center'>
                             <BlurBackgroundDiv className={'shrink-0 max-sm:w-[100%] text-center md:text-right'}>
                                 <h3 className='text-lg font-bold'>Advanced Diploma in Computing</h3>
-                                <p className='my-2'>Amity Global Institute</p>
+                                <p className='my-2 hover:text-amber-300'>
+                                    <a href="https://www.amitysingapore.sg/" target='_blank'>
+                                        Amity Global Institute
+                                    </a>
+                                </p>
                                 <p>January 2025 | Augest 2025</p>
                             </BlurBackgroundDiv>
 
@@ -138,7 +142,11 @@ function Aboutme() {
                             <div className='relative z-10 w-1 md:w-full h-5 md:h-1 bg-gray-500 before:content-[""] before:absolute before:-left-1 md:before:left-0 before:-top-3 md:before:-top-1 before:size-3 before:rounded-[50%] before:bg-gray-500'></div>
                             <BlurBackgroundDiv className={'shrink-0 max-sm:w-[100%] text-center md:text-left'}>
                                 <h3 className='text-lg font-bold'>Diploma in Computing</h3>
-                                <p className='my-2'>Amity Global Institute</p>
+                                <p className='my-2 hover:text-amber-300'>
+                                    <a href="https://www.amitysingapore.sg/" target='_blank'>
+                                        Amity Global Institute
+                                    </a>
+                                </p>
                                 <p>April 2024 | November 2024</p>
                             </BlurBackgroundDiv>
                         </div>
