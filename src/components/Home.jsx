@@ -128,7 +128,7 @@ function Home() {
                     </p>
                 </div>
 
-                <div className='lg:w-[50%] w-full lg:h-full h-[50%] pb-10'>
+                <div className='lg:w-[50%] w-full lg:h-full h-[50%]'>
                     <Link to={'/projects'}>
                         <div ref={projectRef} className='relative z-60 h-[50%] grid place-items-center text-stone-950 bg-white overflow-hidden max-sm:px-5 transition-opacity duration-500 '>
                             <button className='relative z-40 font-allenoire md:text-5xl text-4xl cursor-pointer hover:underline'>Projects Showcase</button>
@@ -143,15 +143,13 @@ function Home() {
                         <div ref={aboutRef} className='relative h-[50%] grid place-items-center bg-amber-500 overflow-hidden max-sm:px-5 transition-opacity duration-500'>
                             <button className='relative z-40 font-allenoire md:text-5xl text-4xl cursor-pointer hover:underline'>About me</button>
                             <div className='max-lg:hidden absolute top-0 left-0 ab-boxs pointer-events-none'>
-                                <div className='absolute top-0 left-0 z-30 -translate-1/2 rotate-5 size-25 bg-red-500'></div>
-                                <div className='absolute top-0 left-0 z-20 -translate-1/2 -rotate-5 size-35 bg-blue-500'></div>
-                                <div className='absolute top-0 left-0 z-10 -translate-1/2 rotate-15 size-45 bg-green-500'></div>
+                                <div className='absolute top-0 left-0 z-30 -translate-1/2 rotate-5 size-25 border-4 rounded-[50%]'></div>
+                                <div className='absolute top-0 left-0 z-20 -translate-1/2 -rotate-5 size-35 border-4 rounded-[50%]'></div>
+                                <div className='absolute top-0 left-0 z-10 -translate-1/2 rotate-15 size-45 border-4 rounded-[50%]'></div>
                             </div>
                         </div>
                     </Link>
                 </div>
-
-                <Marquee />
             </div>
         </section>
     )
