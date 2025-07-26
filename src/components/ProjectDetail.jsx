@@ -152,7 +152,7 @@ function ProjectDetail() {
                 </div>
 
                 <Breadcrumb
-                    className='mt-10'
+                    className='mt-20'
                     title1='Projects showcase'
                     route1='/projects'
                     title2='About me'

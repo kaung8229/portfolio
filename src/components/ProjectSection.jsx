@@ -1,25 +1,26 @@
-import React, { useRef } from 'react'
+import React, { lazy, Suspense, useRef } from 'react'
 import { Link } from 'react-router';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react"
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { SplitText } from "gsap/all";
+
 import { sectionProjects } from '../contants';
 
-import DotGrid from '../reactbits/DotGrid'
 import Navbar from './Navbar';
 import Breadcrumb from './Breadcrumb';
-import BlurBackgroundDiv from '../reusable-components/BlurBackgroundDiv';
+
+const DotGrid = lazy(()=> import("../reactbits/DotGrid"));
 
 function ProjectSection() {
-    const bannerRef = useRef(null);
-    // const boxRef = useRef(null);
+    const boxRef = useRef(null);
 
     useGSAP(()=>{
 
         document.fonts.ready.then(()=>{
             const sectiontitleSplit = SplitText.create('.sectiontitle', {type: "words, chars"});
+            const sectionsubtitleSplit = SplitText.create('.sectionsubtitle', {type: "words"});
 
-            gsap.from(sectiontitleSplit.chars, {
+            gsap.from([sectiontitleSplit.chars, sectionsubtitleSplit.words], {
                 opacity: 0,
                 filter: 'blur(5px)',
                 scale: 1.5,
@@ -29,55 +30,43 @@ function ProjectSection() {
             
         })
 
-        // gsap.to(bannerRef.current, {
-        //     height: '20vh',
-        //     ease: 'none',
-        //     scrollTrigger: {
-        //         trigger: bannerRef.current,
-        //         start: 'top top',
-        //         end: 'bottom center',
-        //         scrub: 1
-        //     }
-        // })
+        const boxes = gsap.utils.toArray(boxRef.current.children);
 
-        // const boxes = gsap.utils.toArray(boxRef.current.children);
-        // const boxTimeline = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: boxRef.current,
-        //         start: 'top 20%',
-        //         end: 'bottom top',
-        //         scrub: 1,
-        //         pin: true
-        //     }
-        // })
-
-        // boxTimeline.from(boxes, {
-        //     yPercent: 100,
-        //     scale: 1.1,
-        //     stagger: 0.5
-        // })
+        boxes.forEach(box => {
+            gsap.from(box, {
+                pointerEvents: 'none',
+                opacity: 0,
+                scale: 1.1,
+                scrollTrigger:{
+                    trigger: box,
+                    start: '20px center'
+                }
+            })
+        })
 
     }, []);
 
     return (
-        <section className='relative pt-[20vh]'>
+        <section className='relative pt-[20vh] py-20'>
             <Navbar />
 
-            {/* <DotGrid
-                dotSize={10}
-                gap={15}
-                baseColor="#222222"
-                activeColor="#000000"
-                proximity={120}
-                shockRadius={250}
-                shockStrength={5}
-                resistance={750}
-                returnDuration={1.5}
-            /> */}
+            <Suspense fallback={<></>}>
+                <DotGrid
+                    dotSize={10}
+                    gap={15}
+                    baseColor="#222222"
+                    activeColor="#000000"
+                    proximity={120}
+                    shockRadius={250}
+                    shockStrength={5}
+                    resistance={750}
+                    returnDuration={1.5}
+                />
+            </Suspense>
 
-            <div ref={bannerRef} className='responsive-container flex lg:flex-row flex-col justify-between items-center gap-10'>
+            <div className='responsive-container flex lg:flex-row flex-col justify-between items-center gap-10'>
                 <h3 className='font-allenoire shrink-0 lg:w-1/2 w-full lg:text-left text-center lg:text-8xl md:text-7xl text-6xl sectiontitle'>Projects</h3>
-                <p className='font-mono text-3xl lg:text-left text-center'>Transforming ideas into interactive, user-friendly web experiences.</p>
+                <p className='font-mono md:text-2xl text-xl lg:text-left text-center sectionsubtitle'>Explore how I transform ideas into interactive, user-friendly web experiences.</p>
             </div>
 
             {/* <div ref={boxRef} className='relative h-[80vh]'>
@@ -109,13 +98,19 @@ function ProjectSection() {
                 ))}
             </div> */}
 
-            <div className='responsive-container relative my-15'>
-                {/* <BlurBackgroundDiv className={'mb-15'}>
-                    <p className='font-allenoire lg:text-2xl text-lg text-center'>
-                        I’m always working on new things. Check back later for updates!
-                    </p>
-                </BlurBackgroundDiv> */}
+            <div ref={boxRef} className='responsive-container md:mt-[20vh] mt-[10vh] md:space-y-20 space-y-8'>
+                {sectionProjects.map((project, idx)=>(
+                <div key={idx} className='group rounded-3xl bg-cyan-50'>
+                    <Link to={`/projects/${project.id}`} style={{cursor: 'url(/uprighticon.png),auto'}}>
+                        <div className='group-hover:scale-95 group-hover:shadow-2xl transition-all aspect-[9/6] bg-white rounded-3xl overflow-hidden'>
+                            <img src={project.img} alt="" className='size-full object-cover' />
+                        </div>
+                    </Link>
+                </div>
+                ))}
+            </div>
 
+            <div className='responsive-container relative mt-20'>
                 <Breadcrumb
                     title1='Home'
                     route1='/'

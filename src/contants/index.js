@@ -1,32 +1,53 @@
-import moviedesktop from '../assets/moviedesktop.jpg';
-import moviemobile from '../assets/moviemobile.jpg';
-import tododesktop from '../assets/tododesktop.jpg';
-import todomobile from '../assets/todomobile.jpg';
-import cockdesktop from '../assets/cockdesktop.jpg';
-import cockmobile from '../assets/cockmobile.jpg';
+import tododesktop from '../assets/tododesktop.png';
+import todomobile from '../assets/todomobile.png';
+import moviedesktop from '../assets/moviedesktop.png';
+import moviemobile from '../assets/moviemobile.png';
+import cocktaildesktop from '../assets/cocktaildesktop.png';
+import cocktailmobile from '../assets/cocktailmobile.png';
+import foodrecipedesktop from '../assets/foodrecipedesktop.png';
+import foodrecipemobile from '../assets/foodrecipemobile.png';
 
-export const marquessTexts = [
-    "Responsive Web Design",
-    "Component-Based Architecture",
-    "API Integration",
-    "State Management with Redux",
-    "Code Reusability",
-    "Performance Optimization",
-];
+export const skillset = {
+    languages: ['HTML', 'CSS', 'Javascript(ES6+)'],
+    tools: ['Git & GitHub', 'npm', 'Vite', 'RESTful APIs', 'Figma', 'Adobe XD'],
+    libraries: ['React.js', 'Redux', 'Bootstrap', 'Tailwind CSS'],
+    additional: ['Responsive Web Design', 'Performance Optimization', 'Cross-browser Compatibility', 'Problem Solving', 'Communication', 'Self-learning', 'Teamwork']
+};
 
 export const sectionProjects = [
     {
         id: 1, 
+        title: 'React Task Organizer with Real-Time Storage', 
+        img: tododesktop, 
+        demoLink: 'https://multitaskmanager.netlify.app/', 
+        gitHubLink: 'https://github.com/kaung8229/TodoList',
+    },
+    {
+        id: 2, 
         title: 'React Movie App with Firebase & API Integration', 
-        img: {
-            desktop: moviedesktop,
-            mobile: moviemobile
-        }, 
+        img: moviedesktop, 
         demoLink: 'https://moviesinfocenter.netlify.app/', 
         gitHubLink: 'https://github.com/kaung8229/movies-info'
     },
     {
-        id: 2, 
+        id: 3, 
+        title: 'Cocktail Landing Page', 
+        img: cocktaildesktop, 
+        demoLink: 'https://cocktailsland.netlify.app/', 
+        gitHubLink: 'https://github.com/kaung8229/cocktail-gsap',
+    },
+    {
+        id: 4, 
+        title: 'Food & Recipe App', 
+        img: foodrecipedesktop, 
+        demoLink: 'https://kaung8229.github.io/footrecipe/', 
+        gitHubLink: 'https://github.com/kaung8229/footrecipe',
+    }
+];
+
+export const detailProjects = [
+    {
+        id: 1,
         title: 'React Task Organizer with Real-Time Storage', 
         img: {
             desktop: tododesktop,
@@ -34,22 +55,22 @@ export const sectionProjects = [
         }, 
         demoLink: 'https://multitaskmanager.netlify.app/', 
         gitHubLink: 'https://github.com/kaung8229/TodoList',
+        overview: 'This Todo List App is a responsive and modern task management tool built with React and styled using Tailwind CSS. It allows users to create, categorize, and manage tasks efficiently. Tasks are stored in Firebase Firestore, enabling real-time updates and persistent storage across sessions. The interface is designed for a clean and intuitive user experience, and task data is automatically synced in the cloud.',
+        tech: [
+            'React',
+            'Tailwind CSS',
+            'Firebase'
+        ],
+        features: [
+            'Users can easily manage their daily tasks with basic CRUD operations.',
+            'Tasks can be grouped by custom categories for better organization.',
+            'Uses Firebase Firestore to store and sync tasks in real-time across devices.',
+            'Designed with Tailwind CSS to look great on mobile, tablet, and desktop screens.',
+            'Built using a component-based architecture for maintainable and scalable code.'
+        ]
     },
     {
-        id: 3, 
-        title: 'Cocktail Landing Page', 
-        img: {
-            desktop: cockdesktop,
-            mobile: cockmobile
-        }, 
-        demoLink: 'https://cocktailsland.netlify.app/', 
-        gitHubLink: 'https://github.com/kaung8229/cocktail-gsap',
-    }
-];
-
-export const detailProjects = [
-    {
-        id: 1,
+        id: 2,
         title: 'React Movie App with Firebase & API Integration', 
         img: {
             desktop: moviedesktop,
@@ -74,34 +95,11 @@ export const detailProjects = [
         ]
     },
     {
-        id: 2,
-        title: 'React Task Organizer with Real-Time Storage', 
-        img: {
-            desktop: tododesktop,
-            mobile: todomobile
-        }, 
-        demoLink: 'https://multitaskmanager.netlify.app/', 
-        gitHubLink: 'https://github.com/kaung8229/TodoList',
-        overview: 'This Todo List App is a responsive and modern task management tool built with React and styled using Tailwind CSS. It allows users to create, categorize, and manage tasks efficiently. Tasks are stored in Firebase Firestore, enabling real-time updates and persistent storage across sessions. The interface is designed for a clean and intuitive user experience, and task data is automatically synced in the cloud.',
-        tech: [
-            'React',
-            'Tailwind CSS',
-            'Firebase'
-        ],
-        features: [
-            'Users can easily manage their daily tasks with basic CRUD operations.',
-            'Tasks can be grouped by custom categories for better organization.',
-            'Uses Firebase Firestore to store and sync tasks in real-time across devices.',
-            'Designed with Tailwind CSS to look great on mobile, tablet, and desktop screens.',
-            'Built using a component-based architecture for maintainable and scalable code.'
-        ]
-    },
-    {
         id: 3, 
         title: 'Cocktail Landing Page', 
         img: {
-            desktop: cockdesktop,
-            mobile: cockmobile
+            desktop: cocktaildesktop,
+            mobile: cocktailmobile
         }, 
         demoLink: 'https://cocktailsland.netlify.app/', 
         gitHubLink: 'https://github.com/kaung8229/cocktail-gsap',
@@ -117,6 +115,27 @@ export const detailProjects = [
             'Ensured the layout works well across mobile, tablet, and desktop using Tailwind CSS.',
             'Followed a visually appealing layout to practice design principles like hierarchy, spacing, and alignment.',
             'Rebuilt and modified from a YouTube GSAP tutorial to practice animation logic and styling customization in a React environment.'
+        ]
+    },
+    {
+        id: 4, 
+        title: 'Food & Recipe App', 
+        img: {
+            desktop: foodrecipedesktop,
+            mobile: foodrecipemobile
+        }, 
+        demoLink: 'https://kaung8229.github.io/footrecipe/', 
+        gitHubLink: 'https://github.com/kaung8229/footrecipe',
+        overview: 'The Food & Recipe web application is a modern, user-friendly platform that allows users to search for food items and instantly access detailed recipes. Built using React JS for dynamic UI rendering and Tailwind CSS for sleek, responsive styling, this app aims to make cooking and meal planning easier and more enjoyable. Whether a beginner or an experienced cook, users can quickly discover new dishes and follow step-by-step instructions right from their browser.',
+        tech: [
+            'React',
+            'Tailwind CSS'
+        ],
+        features: [
+            'Users can search for any food item or ingredient with real-time results fetched from a public recipe API.',
+            'Displays ingredients, preparation steps, and cooking time',
+            'Fully responsive layout using Tailwind CSS and optimized for all screen sizes and devices',
+            'Access to a wide range of international recipes'
         ]
     }
 ];

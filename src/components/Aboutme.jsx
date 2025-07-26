@@ -3,18 +3,15 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react"
 import { SplitText } from "gsap/all";
 
-
-import { marquessTexts } from '../contants'
+import { skillset } from '../contants'
 
 import Navbar from './Navbar'
 import Breadcrumb from './Breadcrumb';
 import BlurBackgroundDiv from '../reusable-components/BlurBackgroundDiv';
-import DotGrid from '../reactbits/DotGrid';
 import LoadingIcon from './LoadingIcon';
-// import GreetRobot from '../spline/GreetRobot';
-// import Spline from '@splinetool/react-spline';
 
 const GreetRobot = lazy(()=> import('../spline/GreetRobot'));
+const DotGrid = lazy(()=> import("../reactbits/DotGrid"));
 
 function Aboutme() {
 
@@ -45,17 +42,20 @@ function Aboutme() {
             <section className='py-20'>
                 <Navbar />
 
-                <DotGrid
-                    dotSize={10}
-                    gap={15}
-                    baseColor="#222222"
-                    activeColor="#000000"
-                    proximity={120}
-                    shockRadius={250}
-                    shockStrength={5}
-                    resistance={750}
-                    returnDuration={1.5}
-                />
+                <Suspense fallback={<></>}>
+                    <DotGrid
+                        dotSize={10}
+                        gap={15}
+                        baseColor="#222222"
+                        activeColor="#000000"
+                        proximity={120}
+                        shockRadius={250}
+                        shockStrength={5}
+                        resistance={750}
+                        returnDuration={1.5}
+                    />
+                </Suspense>
+
                 <div className='responsive-container'>
                     <h3 className='text-4xl lg:text-5xl font-allenoire text-center my-10 abouttitle'>Who am I ?</h3>
                     <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 lg:mb-20 mb-10 aboutboxes">
@@ -77,47 +77,55 @@ function Aboutme() {
                                 <a href='https://github.com/kaung8229' target="_blank" className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
                                     <ion-icon name="logo-github"></ion-icon>
                                 </a>
-                                <a href='https://www.linkedin.com/in/kaung-myat-7a8a21271/' target="_blank" className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
+                                <a href='https://www.linkedin.com/in/kaung-myat-hein-30809b377/' target="_blank" className='size-10 flex justify-center items-center text-3xl rounded-[50%]'>
                                     <ion-icon name="logo-linkedin"></ion-icon>
                                 </a>
                             </div>
                             <div>
                                 <p className='lg:text-lg text-base lg:leading-loose leading-relaxed'>
-                                    <a href="mailto:kaung8229@gmail.com">kaung8229@gmail.com</a>
+                                    <a href="mailto:kaungmyath439@gmail.com">kaungmyath439@gmail.com</a>
                                 </p>
                             </div>
                         </BlurBackgroundDiv>
                         <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%]">
-                            <h3 className='md:text-xl text-lg font-bold mb-2'>
+                            <h3 className='md:text-xl text-lg font-bold mb-3'>
                                 Languages
                             </h3>
-                            <p className='lg:text-lg text-base lg:leading-loose leading-relaxed'>
-                                HTML, CSS, Javascript(ES6+)
-                            </p>
+                            <ul className='list-disc list-inside space-y-3'>
+                                {skillset.languages.map((val, idx)=>(
+                                    <li key={idx}>{val}</li>
+                                ))}
+                            </ul>
                         </BlurBackgroundDiv>
                         <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%]">
-                            <h3 className='md:text-xl text-lg font-bold mb-2'>
-                                Tools & Platforms
-                            </h3>
-                            <p className='lg:text-lg text-base lg:leading-loose leading-relaxed'>
-                                Git & GitHub, Vite, Adobe XD
-                            </p>
-                        </BlurBackgroundDiv>
-                        <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%]">
-                            <h3 className='md:text-xl text-lg font-bold mb-2'>
+                            <h3 className='md:text-xl text-lg font-bold mb-3'>
                                 Frameworks & libraries
                             </h3>
-                            <p className='lg:text-lg text-base lg:leading-loose leading-relaxed'>
-                                React, Redux, Bootstrap, Tailwind CSS, CSS Modules, Styled-components
-                            </p>
+                            <ul className='list-disc list-inside space-y-3'>
+                                {skillset.libraries.map((val, idx)=>(
+                                    <li key={idx}>{val}</li>
+                                ))}
+                            </ul>
                         </BlurBackgroundDiv>
                         <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%]">
-                            <h3 className='md:text-xl text-lg font-bold mb-2'>
-                                Development Practices
+                            <h3 className='md:text-xl text-lg font-bold mb-3'>
+                                Tools & Platforms
                             </h3>
-                            <p className='lg:text-lg text-base lg:leading-loose leading-relaxed'>
-                                {marquessTexts.join(", ")}
-                            </p>
+                            <ul className='list-disc list-inside space-y-3'>
+                                {skillset.tools.map((val, idx)=>(
+                                    <li key={idx}>{val}</li>
+                                ))}
+                            </ul>
+                        </BlurBackgroundDiv>
+                        <BlurBackgroundDiv className="md:max-w-[100%] max-w-[100%]">
+                            <h3 className='md:text-xl text-lg font-bold mb-3'>
+                                Additional Skills
+                            </h3>
+                            <ul className='list-disc list-inside space-y-3'>
+                                {skillset.additional.map((val, idx)=>(
+                                    <li key={idx}>{val}</li>
+                                ))}
+                            </ul>
                         </BlurBackgroundDiv>
                     </div>
 
@@ -127,12 +135,11 @@ function Aboutme() {
                                 <h3 className='text-lg font-bold'>Advanced Diploma in Computing</h3>
                                 <p className='my-2 hover:text-amber-300'>
                                     <a href="https://www.amitysingapore.sg/" target='_blank'>
-                                        Amity Global Institute
+                                        Amity Global Institute - Singapore
                                     </a>
                                 </p>
-                                <p>January 2025 | Augest 2025</p>
+                                <small>January 2025 - Augest 2025</small>
                             </BlurBackgroundDiv>
-
                             <div className='relative z-10 w-1 md:w-full h-5 md:h-1 bg-gray-500 before:content-[""] before:absolute before:-right-1 md:before:right-0 before:top-[100%] md:before:-top-1 before:size-3 before:rounded-[50%] before:bg-gray-500'></div>
                         </div>
 
@@ -144,16 +151,16 @@ function Aboutme() {
                                 <h3 className='text-lg font-bold'>Diploma in Computing</h3>
                                 <p className='my-2 hover:text-amber-300'>
                                     <a href="https://www.amitysingapore.sg/" target='_blank'>
-                                        Amity Global Institute
+                                        Amity Global Institute - Singapore
                                     </a>
                                 </p>
-                                <p>April 2024 | November 2024</p>
+                                <small>April 2024 - November 2024</small>
                             </BlurBackgroundDiv>
                         </div>
                     </div>
 
                     <Breadcrumb
-                        className='relative mt-10'
+                        className='relative mt-20'
                         title1='Home'
                         route1='/'
                         title2='Projects showcase'
